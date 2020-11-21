@@ -1,0 +1,21 @@
+{
+  "name": "replace",
+  "version": "1.0.0",
+  "description": "replace",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanaltair/replace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanaltair/replace/issues"
+  },
+  "homepage": "https://github.com/ryanaltair/replace#readme"
+}
