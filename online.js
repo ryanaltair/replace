@@ -1,5 +1,9 @@
 import { rebuild } from './gcode.js'
 const loader = document.querySelector('#loader')
+const scaleEl = document.querySelector('#scale')
+const g0fEl = document.querySelector('#g0f')
+const g1fEl = document.querySelector('#g1f')
+const toFixedEl = document.querySelector('#toFixed')
 function download (filename, text) {
   const element = document.createElement('a')
   element.setAttribute(
@@ -21,8 +25,14 @@ function parseFile () {
   reader.readAsText(file)
   reader.onload = function () {
     console.log(reader.result)
+    const opt = {
+      g0FeedRate: Number(g0fEl.value),
+      g1FeedRate: Number(g1fEl.value),
+      scale: Number(scaleEl.value),
+      toFixedCount: Number(toFixedEl.value)
+    }
     const gcodeRaw = reader.result
-    const gcode = rebuild(gcodeRaw)
+    const gcode = rebuild(gcodeRaw, opt)
     download(file.name, gcode)
   }
   reader.onerror = function () {
